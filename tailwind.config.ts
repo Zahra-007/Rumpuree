@@ -9,13 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        brandPink: "#E91E8C",
+        background: "#0A0A0F",
+        foreground: "#FFFFFF",
+        brandYellow: "#F5C518",
+        brandDark: "#0A0A0F",
+        brandDarkAlt: "#111118",
+        brandCard: "#1C1C28",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
-        heading: ["var(--font-poppins)", "sans-serif"],
+        heading: ["var(--font-playfair)", "serif"],
       },
     },
   },

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Calendar, User, ArrowRight } from "lucide-react";
 
 interface BlogPost {
@@ -43,19 +44,19 @@ export default function Blogs() {
   ];
 
   return (
-    <section id="blogs" className="py-24 bg-white border-b border-gray-50 scroll-mt-20">
+    <section id="blogs" className="py-24 bg-[#111118] border-b border-brandYellow/10 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Title */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-brandPink font-bold text-xs uppercase tracking-widest bg-pink-50 px-4 py-1.5 rounded-full border border-pink-100/50">
+          <span className="text-brandYellow font-bold text-xs uppercase tracking-widest bg-brandYellow/10 px-4 py-1.5 rounded-full border border-brandYellow/20">
             Latest News
           </span>
-          <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl text-gray-900 mt-4 mb-4">
+          <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl text-white mt-4 mb-4">
             Most Recent Dance Posts
           </h2>
-          <div className="h-1 w-20 bg-brandPink mx-auto rounded-full mb-4"></div>
-          <p className="text-gray-500 text-base">
+          <div className="h-1 w-20 bg-brandYellow mx-auto rounded-full mb-4"></div>
+          <p className="text-white/60 text-base">
             Tips, guides, and updates from the instructors and dance community at rumPUREE.
           </p>
         </div>
@@ -65,17 +66,18 @@ export default function Blogs() {
           {posts.map((post) => (
             <article
               key={post.id}
-              className="bg-white rounded-2xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full group"
+              className="bg-[#1C1C28] rounded-2xl overflow-hidden border border-brandYellow/10 shadow-sm hover:border-brandYellow/30 hover:shadow-yellow-500/5 transition-all duration-300 flex flex-col h-full group"
             >
-              {/* Blog Image */}
-              <div className="relative h-56 overflow-hidden bg-gray-50">
-                <img
+              {/* Blog Image using Next.js Image component */}
+              <div className="relative h-56 overflow-hidden bg-black">
+                <Image
                   src={post.image}
                   alt={post.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4">
-                  <span className="bg-brandPink text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  <span className="bg-brandYellow text-black text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                     {post.category}
                   </span>
                 </div>
@@ -84,30 +86,30 @@ export default function Blogs() {
               {/* Blog Details */}
               <div className="p-6 flex flex-col flex-grow">
                 {/* Meta */}
-                <div className="flex items-center gap-4 text-xs text-gray-400 mb-3 font-semibold">
+                <div className="flex items-center gap-4 text-xs text-white/40 mb-3 font-semibold">
                   <div className="flex items-center gap-1.5">
-                    <Calendar className="w-4.5 h-4.5 text-gray-300" />
+                    <Calendar className="w-4.5 h-4.5 text-white/20" />
                     <span>{post.date}</span>
                   </div>
                   <div className="flex items-center gap-1.5">
-                    <User className="w-4.5 h-4.5 text-gray-300" />
+                    <User className="w-4.5 h-4.5 text-white/20" />
                     <span>By {post.author}</span>
                   </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="font-heading font-bold text-lg text-gray-900 mb-3 line-clamp-2 group-hover:text-brandPink transition-colors duration-200">
+                <h3 className="font-heading font-bold text-lg text-white mb-3 line-clamp-2 group-hover:text-brandYellow transition-colors duration-200">
                   {post.title}
                 </h3>
 
                 {/* Excerpt */}
-                <p className="text-sm text-gray-500 leading-relaxed mb-6 line-clamp-3">
+                <p className="text-sm text-white/60 leading-relaxed mb-6 line-clamp-3 font-normal">
                   {post.excerpt}
                 </p>
 
                 {/* Read More */}
-                <div className="mt-auto pt-4 border-t border-gray-50">
-                  <span className="inline-flex items-center gap-1.5 text-sm font-bold text-brandPink group-hover:gap-2.5 transition-all duration-200 cursor-pointer">
+                <div className="mt-auto pt-4 border-t border-white/10">
+                  <span className="inline-flex items-center gap-1.5 text-sm font-bold text-brandYellow group-hover:gap-2.5 transition-all duration-200 cursor-pointer">
                     <span>Read Article</span>
                     <ArrowRight className="w-4 h-4" />
                   </span>

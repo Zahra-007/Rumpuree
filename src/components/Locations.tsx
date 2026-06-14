@@ -31,19 +31,19 @@ export default function Locations() {
   ];
 
   return (
-    <section id="contacts" className="py-24 bg-gray-50/50 scroll-mt-20">
+    <section id="contacts" className="py-24 bg-[#111118] border-b border-brandYellow/10 scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Title */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-brandPink font-bold text-xs uppercase tracking-widest bg-pink-50 px-4 py-1.5 rounded-full border border-pink-100/50">
+          <span className="text-brandYellow font-bold text-xs uppercase tracking-widest bg-brandYellow/10 px-4 py-1.5 rounded-full border border-brandYellow/20">
             Find Us
           </span>
-          <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl text-gray-900 mt-4 mb-4">
+          <h2 className="font-heading font-black text-3xl sm:text-4xl md:text-5xl text-white mt-4 mb-4">
             Our Studio Locations
           </h2>
-          <div className="h-1 w-20 bg-brandPink mx-auto rounded-full mb-4"></div>
-          <p className="text-gray-500 text-base">
+          <div className="h-1 w-20 bg-brandYellow mx-auto rounded-full mb-4"></div>
+          <p className="text-white/60 text-base">
             Conveniently located in the heart of Bangkok with easy access via mass transit. Visit our world-class facilities today.
           </p>
         </div>
@@ -53,14 +53,14 @@ export default function Locations() {
           {branches.map((branch) => (
             <div
               key={branch.id}
-              className="bg-white rounded-3xl p-8 border border-gray-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+              className="bg-[#1C1C28] rounded-3xl p-8 border border-brandYellow/10 shadow-md hover:border-brandYellow/30 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 rounded-2xl bg-pink-50 flex items-center justify-center border border-pink-100">
-                    <MapPin className="w-6 h-6 text-brandPink" />
+                  <div className="w-12 h-12 rounded-2xl bg-brandYellow/10 flex items-center justify-center border border-brandYellow/20">
+                    <MapPin className="w-6 h-6 text-brandYellow" />
                   </div>
-                  <h3 className="font-heading font-black text-2xl text-gray-900">
+                  <h3 className="font-heading font-black text-2xl text-white">
                     {branch.name}
                   </h3>
                 </div>
@@ -68,30 +68,30 @@ export default function Locations() {
                 <div className="space-y-5">
                   {/* Address */}
                   <div className="flex items-start">
-                    <div className="w-5 mt-1 flex-shrink-0 flex justify-center text-gray-400">
+                    <div className="w-5 mt-1 flex-shrink-0 flex justify-center text-white/30">
                       <MapPin className="w-4.5 h-4.5" />
                     </div>
-                    <p className="ml-3 text-sm text-gray-600 leading-relaxed">
+                    <p className="ml-3 text-sm text-white/60 leading-relaxed">
                       {branch.address}
                     </p>
                   </div>
 
                   {/* Transit */}
                   <div className="flex items-start">
-                    <div className="w-5 mt-1 flex-shrink-0 flex justify-center text-brandPink">
+                    <div className="w-5 mt-1 flex-shrink-0 flex justify-center text-brandYellow">
                       <Train className="w-4.5 h-4.5" />
                     </div>
-                    <p className="ml-3 text-sm text-gray-700 font-semibold">
+                    <p className="ml-3 text-sm text-white font-semibold">
                       {branch.transit}
                     </p>
                   </div>
 
                   {/* Phone */}
                   <div className="flex items-start">
-                    <div className="w-5 mt-1 flex-shrink-0 flex justify-center text-gray-400">
+                    <div className="w-5 mt-1 flex-shrink-0 flex justify-center text-white/30">
                       <Phone className="w-4.5 h-4.5" />
                     </div>
-                    <p className="ml-3 text-sm text-gray-600">
+                    <p className="ml-3 text-sm text-white/60">
                       {branch.phone}
                     </p>
                   </div>
@@ -99,12 +99,12 @@ export default function Locations() {
               </div>
 
               {/* Action Button */}
-              <div className="mt-8 pt-6 border-t border-gray-50">
+              <div className="mt-8 pt-6 border-t border-white/5">
                 <a
                   href={branch.mapLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full inline-flex justify-center items-center gap-2 bg-gray-50 hover:bg-brandPink hover:text-white text-gray-800 font-bold py-3.5 px-6 rounded-2xl text-sm transition-all duration-200 border border-gray-100 hover:border-brandPink"
+                  className="w-full inline-flex justify-center items-center gap-2 bg-[#111118] hover:bg-brandYellow hover:text-black text-brandYellow font-bold py-3.5 px-6 rounded-2xl text-sm transition-all duration-200 border border-brandYellow/20 hover:border-brandYellow"
                 >
                   <span>Open in Google Maps</span>
                   <ExternalLink className="w-4 h-4" />
